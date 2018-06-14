@@ -14,7 +14,7 @@ aws s3 cp $CONFIG_PATH . --recursive --exclude "bootstrap.sh" --region $REGION
 
 aws s3 cp $FORMULA_KEY $FORMULA_LOCAL_KEY --region $REGION
 
-sed -i "s@__PIRATES_FORMULA_HOSTNAME__@$FORMULA_LOCAL_KEY@g" ssh-config
+sed -i "s@__PIRATES_FORMULA_HOSTNAME__@$FORMULA_HOSTNAME@g" ssh-config
 sed -i "s@__PIRATES_FORMULA_KEY__@$FORMULA_LOCAL_KEY@g" ssh-config
 
 cat ssh-config >> ~/.ssh/config
