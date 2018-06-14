@@ -1,0 +1,3 @@
+Host __PIRATES_FORMULA_HOSTNAME__
+  HostName github.com
+  IdentityFile __PIRATES_FORMULA_KEY__
