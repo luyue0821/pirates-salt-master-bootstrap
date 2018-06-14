@@ -10,7 +10,7 @@ FORMULA_LOCAL_KEY=/etc/salt/ssh-keys/git-formula
 
 apt-get install python-git -y
 
-aws s3 cp $CONFIG_PATH . --recursive --exclude "bootstrap.sh"
+aws s3 cp $CONFIG_PATH . --recursive --exclude "bootstrap.sh" --region $REGION
 
 aws s3 cp $FORMULA_KEY $FORMULA_LOCAL_KEY --region $REGION
 
