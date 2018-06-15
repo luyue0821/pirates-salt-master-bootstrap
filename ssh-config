@@ -1,3 +1,7 @@
 Host __PIRATES_FORMULA_HOSTNAME__
   HostName github.com
   IdentityFile __PIRATES_FORMULA_KEY__
+
+Host __PIRATES_PILLAR_HOSTNAME__
+  HostName github.com
+  IdentityFile __PIRATES_PILLAR_KEY__
