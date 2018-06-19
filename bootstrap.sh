@@ -54,3 +54,16 @@ cat known_hosts >> ~/.ssh/known_hosts
 
 systemctl start salt-master.service
 systemctl enable salt-master.service
+
+echo Configurating salt-minion on master...
+echo "master: localhost" |sudo tee /etc/salt/minion.d/master.conf
+minion_id=$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)
+echo "$minion_id" |sudo tee /etc/salt/minion_id
+
+salt-key --gen-keys=$minion_id
+cp $minion_id.pub /etc/salt/pki/master/minions/$minion_id
+mv $minion_id.pub /etc/salt/pki/minion/minion.pub
+mv $minion_id.pem /etc/salt/pki/minion/minion.pem
+
+echo Starting salt-minion.service...
+systemctl start salt-minion
