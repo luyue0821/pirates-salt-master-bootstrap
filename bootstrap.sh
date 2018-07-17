@@ -52,6 +52,10 @@ cp fileserver.conf /etc/salt/master.d/
 echo Adding known hosts...
 cat known_hosts >> ~/.ssh/known_hosts
 
+echo Executing state.apply...
+# TODO Is it reasonable? Self deploy using salt-run need master state file exists in gitfs repo.
+salt-run salt.cmd state.apply master
+
 systemctl start salt-master.service
 systemctl enable salt-master.service
 
