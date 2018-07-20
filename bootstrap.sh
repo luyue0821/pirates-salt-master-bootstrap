@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# TODO For debug purpose.
+echo "log_level: debug" > /etc/salt/master.d/log.conf
+
 REGION=cn-north-1
 
 CONFIG_PATH=s3://pirates-ops/salt-master/bootstrap/
