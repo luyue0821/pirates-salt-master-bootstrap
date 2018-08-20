@@ -70,6 +70,10 @@ echo Starting salt-master service at $(date)...
 systemctl start salt-master.service
 systemctl enable salt-master.service
 
+echo Starting salt-api service at $(date)...
+systemctl start salt-api.service
+systemctl enable salt-api.service
+
 echo Configurating salt-minion on master at $(date)...
 echo "master: localhost" |sudo tee /etc/salt/minion.d/master.conf
 minion_id=$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)
