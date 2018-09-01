@@ -23,8 +23,8 @@ pillar_root=$1
 echo pillar_root=$pillar_root
 
 apt-get update
-echo Installing python-git at $(date)...
-apt-get install python-git -y
+echo Installing python3-git at $(date)...
+apt-get install python3-git -y
 
 echo Downloading bootstrap config at $(date)...
 aws s3 cp $CONFIG_PATH . --recursive --exclude "bootstrap.sh" --region $REGION
