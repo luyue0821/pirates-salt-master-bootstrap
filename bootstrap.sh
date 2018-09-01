@@ -66,6 +66,8 @@ salt-run git_pillar.update
 
 echo Applying master state at $(date)...
 salt-run salt.cmd state.apply master with_pillar=True
+echo TODO Apply one more time to do a workaround for ec2_boto not found issue
+salt-run salt.cmd state.apply master with_pillar=True
 
 echo Starting salt-master service at $(date)...
 systemctl start salt-master.service
