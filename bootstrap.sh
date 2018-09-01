@@ -22,6 +22,7 @@ fi
 pillar_root=$1
 echo pillar_root=$pillar_root
 
+apt-get update
 echo Installing python-git at $(date)...
 apt-get install python-git -y
 
