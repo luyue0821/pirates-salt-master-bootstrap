@@ -64,6 +64,9 @@ salt-run fileserver.update
 echo git_pillar.update at $(date)...
 salt-run git_pillar.update
 
+echo Sync all modules at $(date)...
+salt-run salt.cmd saltutil.sync_all
+
 echo Applying master state at $(date)...
 salt-run salt.cmd state.apply master with_pillar=True
 echo TODO Apply one more time to do a workaround for ec2_boto not found issue
